@@ -1,0 +1,18 @@
+syntax = "proto3";
+package sudoing;
+
+service Sudoing {
+    rpc Sudo (SudoingRequest) returns (SudoingResponse);
+}
+
+message SudoingRequest {
+        string hostname = 1;
+}
+
+message SudoingResponse {
+        repeated Sudoer sudoers = 1;
+}
+
+message Sudoer {
+        string username = 1;
+}
